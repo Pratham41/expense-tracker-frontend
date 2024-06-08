@@ -34,7 +34,7 @@ const Home = () => {
     try {
       const user = JSON.parse(localStorage.getItem("pratham-money-user"));
       setLoading(true);
-      const response = await axios.post("https://expensetracker-cqzj.onrender.com/transactions/get-all-transactions", {
+      const response = await axios.post("https://expense-tracker-backend-theta.vercel.app/transactions/get-all-transactions", {
         userId: user._id,
         frequency,
         ...(frequency === "custom" && { selectedRange }),
@@ -51,7 +51,7 @@ const Home = () => {
   const deleteTransaction = async (record) => {
     try {
       setLoading(true);
-      await axios.post("https://expensetracker-cqzj.onrender.com/transactions/delete-transaction", {
+      await axios.post("https://expense-tracker-backend-theta.vercel.app/transactions/delete-transaction", {
         transactionId: record._id,
       });
       message.success("Transaction deleted successfully !");

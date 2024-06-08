@@ -13,7 +13,7 @@ const Register = () => {
     console.log(values);
     try {
       setLoading(true);
-      await axios.post("https://expensetracker-cqzj.onrender.com/users/register", values);
+      await axios.post("https://expense-tracker-backend-theta.vercel.app/users/register", values);
       setLoading(false);
       message.success("Registration successfull !");
     } catch (error) {
